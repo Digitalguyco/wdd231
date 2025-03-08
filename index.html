@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Course Home Page" />
+  <meta name="author" content="Ikekwem Daniel Favour" />
+  <title>Course Home</title>
+
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <!-- Base CSS -->
+  <link rel="stylesheet" href="styles/small.css" />
+  <!-- Larger screen CSS (with media queries) -->
+  <link rel="stylesheet" href="styles/larger.css" />
+  
+  <!-- Google Fonts (example) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" 
+    rel="stylesheet"
+  >
+
+  <!-- JavaScript Files  -->
+  <script src="scripts/date.js" defer></script>
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/course.js" defer></script>
+</head>
+<body>
+  <header>
+    <!-- Top bar with profile photo and name -->
+    <div class="top-bar">
+      <img 
+        src="images/profile.jpeg" 
+        alt="Profile Photo" 
+        class="profile-photo" 
+        width="60" 
+        height="60"
+      />
+      <h1>Ikekwem Daniel Favour</h1>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+      <ul>
+        <li><a href="#" class="current">Home</a></li>
+        <li><a href="#">Chamber</a></li>
+        <li><a href="#">GitHub Profile</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+      <!-- Hamburger menu button for small screens (if desired) -->
+      <button id="nav-toggle">Menu</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Top section with two columns: Course Work & location/image -->
+    <section class="top-section">
+      <div class="course-work">
+        <h2>Home</h2>
+        <ul>
+          <li>Bullet item 1</li>
+          <li>Bullet item 2</li>
+          <li>Bullet item 3</li>
+        </ul>
+      </div>
+      <div class="location">
+        <h2>Lagos, Nigeria</h2>
+        <img 
+          src="images/lagos.jpg" 
+          alt="Lagos, Nigeria" 
+          class="location-img"
+        />
+      </div>
+    </section>
+
+    <!-- Certificate section -->
+    <section class="certificate">
+      <h2>Web and Computer Programming Certificate</h2>
+      <div class="filter-buttons">
+        <button id="filter-all">All</button>
+        <button id="filter-cse">CSE</button>
+        <button id="filter-wdd">WDD</button>
+      </div>
+      <div class="course-cards" id="course-cards">
+        <!-- JS will generate the course cards here -->
+      </div>
+      <div id="credit-total">
+        Total Credits: <span id="credits"></span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &copy; <span id="currentyear"></span> Ikekwem Daniel Favour | Nigeria
+    </p>
+    <p id="lastModified"></p>
+    <img src="images/nigeria-flag.jpeg" alt="Nigeria Flag" class="flag" />
+  </footer>
+</body>
+</html>

@@ -1,0 +1,38 @@
+@media screen and (min-width: 600px) {
+    /* Make the top section two columns when the screen is at least 600px wide */
+    .top-section {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    /* Show the hamburger button only on small screens, hide on larger screens */
+    #nav-toggle {
+      display: none;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    /* Adjust padding, font sizes, etc. for even larger screens */
+    .top-bar h1 {
+      font-size: 2rem;
+    }
+  }
+/* ========== LARGER.CSS ========== */
+@media screen and (min-width: 600px) {
+    /* Make the top section two columns when the screen is at least 600px wide */
+    .top-section {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    /* Show the hamburger button only on small screens, hide on larger screens */
+    #nav-toggle {
+      display: none;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    /* Adjust padding, font sizes, etc. for even larger screens */
+    .top-bar h1 {
+      font-size: 2rem;
+    }
+  }
+    
