@@ -1,0 +1,67 @@
+{
+  "members": [
+    {
+      "name": "Alpha Tech Solutions",
+      "address": "123 Tech Drive, Lagos",
+      "phone": "+234 555 123 4567",
+      "website": "https://alphatech.example.com",
+      "image": "images/bionet-tech.png",
+      "membership": 3,
+      "description": "Innovative software solutions for businesses."
+    },
+    {
+      "name": "Beta Finance Group",
+      "address": "456 Market Street, Lagos",
+      "phone": "+234 555 987 6543",
+      "website": "https://betafinance.example.com",
+      "image": "images/green-haven.png",
+      "membership": 2,
+      "description": "Comprehensive financial services and consulting."
+    },
+    {
+      "name": "Gamma Health Clinic",
+      "address": "789 Health Ave, Lagos",
+      "phone": "+234 555 111 2222",
+      "website": "https://gammahealth.example.com",
+      "image": "images/health-clinic.png",
+      "membership": 1,
+      "description": "Quality healthcare services for the community."
+    },
+    {
+      "name": "Delta Logistics",
+      "address": "101 Transport Rd, Lagos",
+      "phone": "+234 555 333 4444",
+      "website": "https://deltalogistics.example.com",
+      "image": "images/ocean-shipping.png",
+      "membership": 3,
+      "description": "Efficient supply chain and delivery solutions."
+    },
+    {
+      "name": "Epsilon Education Center",
+      "address": "202 Learning Ln, Lagos",
+      "phone": "+234 555 555 6666",
+      "website": "https://epsilonedu.example.com",
+      "image": "images/furniture.png",
+      "membership": 1,
+      "description": "Lifelong learning and professional courses."
+    },
+    {
+      "name": "Zeta Retail Mall",
+      "address": "303 Commerce Blvd, Lagos",
+      "phone": "+234 555 777 8888",
+      "website": "https://zetaretail.example.com",
+      "image": "images/travel.png",
+      "membership": 2,
+      "description": "One-stop shopping destination with diverse stores."
+    },
+    {
+      "name": "Eta Creative Agency",
+      "address": "404 Innovation Dr, Lagos",
+      "phone": "+234 555 999 0000",
+      "website": "https://etacreative.example.com",
+      "image": "images/green-haven.png",
+      "membership": 3,
+      "description": "Branding, marketing, and digital media solutions."
+    }
+  ]
+} 

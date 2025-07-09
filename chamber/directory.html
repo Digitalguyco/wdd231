@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lagos Chamber of Commerce | Directory</title>
+  <meta name="description" content="Directory of businesses and organizations that are proud members of the Lagos Chamber of Commerce.">
+  <meta name="author" content="Daniel Khito">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lagos Chamber of Commerce | Directory">
+  <meta property="og:description" content="Discover local businesses that make Lagos thrive.">
+  <meta property="og:image" content="https://your-github-username.github.io/wdd231/images/lagos.jpg">
+  <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/directory.html">
+
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+  <!-- Chamber Styles -->
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <img src="../images/lagos.jpg" alt="Lagos skyline" class="logo">
+      <h1>Lagos Chamber of Commerce</h1>
+    </div>
+    <nav>
+      <button id="nav-toggle" aria-label="Toggle Navigation">&#9776;</button>
+      <ul id="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#" class="current">Directory</a></li>
+        <li><a href="#">Discover</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="view-toggle" aria-label="Layout Selector">
+      <button id="grid-view" class="active" aria-label="Grid View">Grid View</button>
+      <button id="list-view" aria-label="List View">List View</button>
+    </section>
+
+    <div id="members" class="grid" aria-live="polite"></div>
+  </main>
+
+  <footer>
+    <p>Contact: info@lagoschamber.example.com | +234 555 123 4567</p>
+    <p>© <span id="currentYear"></span> Daniel Khito | WDD 231</p>
+    <p>Last modification: <span id="lastModified"></span></p>
+  </footer>
+
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/directory.js" defer></script>
+</body>
+</html> 
