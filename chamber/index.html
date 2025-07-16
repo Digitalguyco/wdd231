@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lagos Chamber of Commerce</title>
+  <meta name="description" content="Welcome to the Lagos Chamber of Commerce. Your partner for business growth and community development in Lagos.">
+  <meta name="author" content="Daniel Khito">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lagos Chamber of Commerce">
+  <meta property="og:description" content="Welcome to the Lagos Chamber of Commerce. Your partner for business growth and community development in Lagos.">
+  <meta property="og:image" content="https://your-github-username.github.io/wdd231/images/lagos.jpg">
+  <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/index.html">
+
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+  <!-- Chamber Styles -->
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <img src="../images/lagos.jpg" alt="Lagos skyline" class="logo">
+      <h1>Lagos Chamber of Commerce</h1>
+    </div>
+    <nav>
+      <button id="nav-toggle" aria-label="Toggle Navigation">&#9776;</button>
+      <ul id="nav-menu">
+        <li><a href="index.html" class="current">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="images/cms.jpg" alt="Vibrant marketplace in Lagos">
+      <div class="cta">
+        <h2>Join Our Thriving Business Community</h2>
+        <a href="join.html">Become a Member</a>
+      </div>
+    </section>
+
+    <section class="events">
+      <h3>Upcoming Events</h3>
+      <div id="event-list"></div>
+    </section>
+
+    <section class="weather">
+      <h3>Local Weather</h3>
+      <div id="weather-info"></div>
+    </section>
+
+    <section class="spotlights">
+      <h3>Member Spotlights</h3>
+      <div id="spotlight-cards"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact: info@lagoschamber.example.com | +234 555 123 4567</p>
+    <p>© <span id="currentYear"></span> Daniel Khito | WDD 231</p>
+    <p>Last modification: <span id="lastModified"></span></p>
+  </footer>
+
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/home.js" defer></script>
+</body>
+</html>
