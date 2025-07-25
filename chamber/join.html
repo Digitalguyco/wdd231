@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Us | Lagos Chamber of Commerce</title>
+  <meta name="description" content="Join the Lagos Chamber of Commerce to grow your business and connect with other professionals in the community.">
+  <meta name="author" content="Daniel Khito">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Join Us | Lagos Chamber of Commerce">
+  <meta property="og:description" content="Join the Lagos Chamber of Commerce to grow your business and connect with other professionals in the community.">
+  <meta property="og:image" content="https://your-github-username.github.io/wdd231/images/lagos.jpg">
+  <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/join.html">
+
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+  <!-- Chamber Styles -->
+  <link rel="stylesheet" href="styles/styles.css">
+  <style>
+    /* Form Styles */
+    .form-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .form-container {
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+
+    form {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="submit"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      background-color: #1a5276;
+      color: white;
+      border: none;
+      padding: 1rem;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #154360;
+    }
+
+    /* Membership Cards */
+    .membership-cards {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .membership-cards {
+        margin-top: 0;
+      }
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.3s; }
+    .card:nth-child(3) { animation-delay: 0.5s; }
+    .card:nth-child(4) { animation-delay: 0.7s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card h3 {
+      color: #1a5276;
+      margin-top: 0;
+    }
+
+    .card p {
+      margin-bottom: 1.5rem;
+    }
+
+    .card a {
+      color: #1a5276;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 600px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <img src="../images/lagos.jpg" alt="Lagos skyline" class="logo">
+      <h1>Lagos Chamber of Commerce</h1>
+    </div>
+    <nav>
+      <button id="nav-toggle" aria-label="Toggle Navigation">&#9776;</button>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html" class="current">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="form-container">
+    <form id="joinForm" action="thankyou.html" method="get">
+      <h2>Join the Chamber</h2>
+      
+      <div class="form-group">
+        <label for="firstName">First Name*</label>
+        <input type="text" id="firstName" name="firstName" required 
+               autocomplete="given-name" title="Please enter your first name">
+      </div>
+      
+      <div class="form-group">
+        <label for="lastName">Last Name*</label>
+        <input type="text" id="lastName" name="lastName" required
+               autocomplete="family-name" title="Please enter your last name">
+      </div>
+      
+      <div class="form-group">
+        <label for="title">Job Title</label>
+        <input type="text" id="title" name="title" 
+               autocomplete="organization-title" title="Please enter your job title"
+               pattern="[A-Za-z\s-]+" minlength="7">
+        <small>Letters, hyphens, and spaces only (minimum 7 characters)</small>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email*</label>
+        <input type="email" id="email" name="email" required
+               autocomplete="email" placeholder="example@domain.com"
+               title="Please enter a valid email address">
+      </div>
+      
+      <div class="form-group">
+        <label for="phone">Mobile Phone*</label>
+        <input type="tel" id="phone" name="phone" required
+               autocomplete="tel" title="Please enter your mobile phone number">
+      </div>
+      
+      <div class="form-group">
+        <label for="orgName">Business/Organization Name*</label>
+        <input type="text" id="orgName" name="orgName" required
+               autocomplete="organization" title="Please enter your business or organization name">
+      </div>
+      
+      <div class="form-group">
+        <label for="membership">Membership Level*</label>
+        <select id="membership" name="membership" required>
+          <option value="">Select a membership level...</option>
+          <option value="np">NP Membership (Non-Profit)</option>
+          <option value="bronze">Bronze Membership</option>
+          <option value="silver">Silver Membership</option>
+          <option value="gold">Gold Membership</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="description">Business/Organization Description</label>
+        <textarea id="description" name="description" title="Tell us about your business or organization"></textarea>
+      </div>
+      
+      <input type="hidden" id="timestamp" name="timestamp">
+      
+      <div class="form-group">
+        <input type="submit" value="Submit Application">
+      </div>
+    </form>
+
+    <div class="membership-cards">
+      <div class="card">
+        <h3>NP Membership</h3>
+        <p>For non-profit organizations</p>
+        <p>No fee</p>
+        <a href="#" class="learn-more" data-level="np">Learn more</a>
+      </div>
+      
+      <div class="card">
+        <h3>Bronze Membership</h3>
+        <p>Basic benefits for small businesses</p>
+        <p>Affordable pricing</p>
+        <a href="#" class="learn-more" data-level="bronze">Learn more</a>
+      </div>
+      
+      <div class="card">
+        <h3>Silver Membership</h3>
+        <p>Enhanced benefits for growing businesses</p>
+        <p>Great value</p>
+        <a href="#" class="learn-more" data-level="silver">Learn more</a>
+      </div>
+      
+      <div class="card">
+        <h3>Gold Membership</h3>
+        <p>Premium benefits for established businesses</p>
+        <p>Maximum exposure</p>
+        <a href="#" class="learn-more" data-level="gold">Learn more</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal Templates -->
+  <div id="npModal" class="modal">
+    <div class="modal-content">
+      <button class="close-modal">&times;</button>
+      <h2>NP Membership Benefits</h2>
+      <p>Our NP Membership is designed specifically for non-profit organizations to help them connect with the business community and access valuable resources.</p>
+      <h3>Benefits Include:</h3>
+      <ul>
+        <li>Free membership for registered non-profits</li>
+        <li>Access to member directory</li>
+        <li>Monthly networking events</li>
+        <li>Discounted rates on chamber events</li>
+        <li>Quarterly non-profit roundtables</li>
+        <li>Volunteer matching services</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="bronzeModal" class="modal">
+    <div class="modal-content">
+      <button class="close-modal">&times;</button>
+      <h2>Bronze Membership Benefits</h2>
+      <p>Perfect for small businesses looking to establish their presence in the community.</p>
+      <h3>Benefits Include:</h3>
+      <ul>
+        <li>Basic business listing in our online directory</li>
+        <li>Access to member-only networking events</li>
+        <li>Monthly business development workshops</li>
+        <li>Chamber newsletter subscription</li>
+        <li>Discounts on chamber events</li>
+        <li>Business referral program</li>
+      </ul>
+      <p><strong>Annual Fee: $250</strong></p>
+    </div>
+  </div>
+
+  <div id="silverModal" class="modal">
+    <div class="modal-content">
+      <button class="close-modal">&times;</button>
+      <h2>Silver Membership Benefits</h2>
+      <p>Ideal for growing businesses looking to expand their network and visibility.</p>
+      <h3>Benefits Include:</h3>
+      <ul>
+        <li>All Bronze benefits, plus:</li>
+        <li>Enhanced business listing with logo and description</li>
+        <li>Priority registration for events</li>
+        <li>Quarterly business spotlight opportunity</li>
+        <li>Access to exclusive member-only webinars</li>
+        <li>Discounted advertising rates</li>
+        <li>Invitation to VIP receptions</li>
+      </ul>
+      <p><strong>Annual Fee: $500</strong></p>
+    </div>
+  </div>
+
+  <div id="goldModal" class="modal">
+    <div class="modal-content">
+      <button class="close-modal">&times;</button>
+      <h2>Gold Membership Benefits</h2>
+      <p>Our premier membership level offering maximum exposure and exclusive benefits for established businesses.</p>
+      <h3>Benefits Include:</h3>
+      <ul>
+        <li>All Silver benefits, plus:</li>
+        <li>Premium placement in our business directory</li>
+        <li>Featured spot in our annual business guide</li>
+        <li>Complimentary event sponsorships</li>
+        <li>Exclusive CEO roundtable invitations</li>
+        <li>Dedicated business development consultation</li>
+        <li>Complimentary booth at annual business expo</li>
+        <li>Recognition in chamber publications</li>
+      </ul>
+      <p><strong>Annual Fee: $1,000</strong></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Contact: info@lagoschamber.example.com | +234 555 123 4567</p>
+    <p>© <span id="currentYear"></span> Daniel Khito | WDD 231</p>
+    <p>Last modification: <span id="lastModified"></span></p>
+  </footer>
+
+  <script>
+    // Set current year and last modified date
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    document.getElementById('lastModified').textContent = document.lastModified;
+    
+    // Set timestamp when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      const now = new Date();
+      document.getElementById('timestamp').value = now.toISOString();
+      
+      // Modal functionality
+      const modals = document.querySelectorAll('.modal');
+      const modalLinks = document.querySelectorAll('.learn-more');
+      const closeButtons = document.querySelectorAll('.close-modal');
+      
+      // Open modal when clicking learn more links
+      modalLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const level = this.getAttribute('data-level');
+          document.getElementById(`${level}Modal`).style.display = 'flex';
+        });
+      });
+      
+      // Close modal when clicking close button
+      closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          this.closest('.modal').style.display = 'none';
+        });
+      });
+      
+      // Close modal when clicking outside the modal content
+      window.addEventListener('click', function(e) {
+        if (e.target.classList.contains('modal')) {
+          e.target.style.display = 'none';
+        }
+      });
+      
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          modals.forEach(modal => {
+            modal.style.display = 'none';
+          });
+        }
+      });
+    });
+  </script>
+  <script src="scripts/navigation.js" defer></script>
+</body>
+</html>

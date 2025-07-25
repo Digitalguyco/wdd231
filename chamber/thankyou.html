@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Lagos Chamber of Commerce</title>
+  <meta name="description" content="Thank you for joining the Lagos Chamber of Commerce. We're excited to have you as a member!">
+  <meta name="author" content="Daniel Khito">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Thank You | Lagos Chamber of Commerce">
+  <meta property="og:description" content="Thank you for joining the Lagos Chamber of Commerce. We're excited to have you as a member!">
+  <meta property="og:image" content="https://your-github-username.github.io/wdd231/images/lagos.jpg">
+  <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/thankyou.html">
+
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+  <!-- Chamber Styles -->
+  <link rel="stylesheet" href="styles/styles.css">
+  <style>
+    .thank-you-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .thank-you-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .thank-you-header h1 {
+      color: #1a5276;
+      margin-bottom: 1rem;
+    }
+
+    .thank-you-header p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .application-details {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 6px;
+      margin: 2rem 0;
+    }
+
+    .application-details h2 {
+      color: #1a5276;
+      margin-top: 0;
+      border-bottom: 2px solid #1a5276;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .detail-row {
+      display: flex;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .detail-label {
+      font-weight: 600;
+      width: 200px;
+      flex-shrink: 0;
+    }
+
+    .detail-value {
+      flex-grow: 1;
+    }
+
+    .next-steps {
+      margin-top: 2rem;
+      background: #e8f4fc;
+      padding: 1.5rem;
+      border-radius: 6px;
+    }
+
+    .next-steps h3 {
+      color: #1a5276;
+      margin-top: 0;
+    }
+
+    .next-steps ul {
+      padding-left: 1.5rem;
+    }
+
+    .next-steps li {
+      margin-bottom: 0.5rem;
+    }
+
+    .back-home {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #1a5276;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .back-home:hover {
+      background-color: #154360;
+    }
+
+    @media (max-width: 768px) {
+      .detail-row {
+        flex-direction: column;
+      }
+      
+      .detail-label {
+        width: 100%;
+        margin-bottom: 0.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <img src="../images/lagos.jpg" alt="Lagos skyline" class="logo">
+      <h1>Lagos Chamber of Commerce</h1>
+    </div>
+    <nav>
+      <button id="nav-toggle" aria-label="Toggle Navigation">&#9776;</button>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="thank-you-container">
+    <div class="thank-you-header">
+      <h1>Thank You for Your Application!</h1>
+      <p>We've received your application to join the Lagos Chamber of Commerce. A member of our team will review your information and get back to you within 2 business days.</p>
+    </div>
+
+    <div class="application-details">
+      <h2>Your Application Details</h2>
+      
+      <div class="detail-row">
+        <div class="detail-label">Name:</div>
+        <div class="detail-value" id="applicantName"></div>
+      </div>
+      
+      <div class="detail-row">
+        <div class="detail-label">Email:</div>
+        <div class="detail-value" id="applicantEmail"></div>
+      </div>
+      
+      <div class="detail-row">
+        <div class="detail-label">Phone:</div>
+        <div class="detail-value" id="applicantPhone"></div>
+      </div>
+      
+      <div class="detail-row">
+        <div class="detail-label">Business/Organization:</div>
+        <div class="detail-value" id="applicantOrg"></div>
+      </div>
+      
+      <div class="detail-row">
+        <div class="detail-label">Membership Level:</div>
+        <div class="detail-value" id="membershipLevel"></div>
+      </div>
+      
+      <div class="detail-row">
+        <div class="detail-label">Application Date & Time:</div>
+        <div class="detail-value" id="applicationDate"></div>
+      </div>
+    </div>
+
+    <div class="next-steps">
+      <h3>What Happens Next?</h3>
+      <ul>
+        <li>Our membership team will review your application</li>
+        <li>We'll contact you within 2 business days to discuss the next steps</li>
+        <li>You'll receive a welcome email with your membership details</li>
+        <li>Once approved, you'll get access to all member benefits</li>
+      </ul>
+      
+      <p>If you have any questions, please don't hesitate to contact us at <a href="mailto:membership@lagoschamber.example.com">membership@lagoschamber.example.com</a> or call us at +234 555 123 4567.</p>
+      
+      <a href="index.html" class="back-home">Back to Home</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>Contact: info@lagoschamber.example.com | +234 555 123 4567</p>
+    <p>© <span id="currentYear"></span> Daniel Khito | WDD 231</p>
+    <p>Last modification: <span id="lastModified"></span></p>
+  </footer>
+
+  <script>
+    // Set current year and last modified date
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    document.getElementById('lastModified').textContent = document.lastModified;
+    
+    // Parse URL parameters and display form data
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      
+      // Display form data
+      const firstName = urlParams.get('firstName') || '';
+      const lastName = urlParams.get('lastName') || '';
+      const email = urlParams.get('email') || '';
+      const phone = urlParams.get('phone') || '';
+      const orgName = urlParams.get('orgName') || '';
+      const membership = urlParams.get('membership') || '';
+      const timestamp = urlParams.get('timestamp') || new Date().toISOString();
+      
+      // Format membership level for display
+      let membershipDisplay = '';
+      switch(membership) {
+        case 'np':
+          membershipDisplay = 'NP Membership (Non-Profit)';
+          break;
+        case 'bronze':
+          membershipDisplay = 'Bronze Membership';
+          break;
+        case 'silver':
+          membershipDisplay = 'Silver Membership';
+          break;
+        case 'gold':
+          membershipDisplay = 'Gold Membership';
+          break;
+        default:
+          membershipDisplay = 'Not specified';
+      }
+      
+      // Format timestamp for display
+      let formattedDate = 'N/A';
+      try {
+        const dateObj = new Date(timestamp);
+        formattedDate = dateObj.toLocaleString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: true
+        });
+      } catch (e) {
+        console.error('Error formatting date:', e);
+      }
+      
+      // Update the DOM with form data
+      document.getElementById('applicantName').textContent = `${firstName} ${lastName}`.trim() || 'N/A';
+      document.getElementById('applicantEmail').textContent = email || 'N/A';
+      document.getElementById('applicantPhone').textContent = phone || 'N/A';
+      document.getElementById('applicantOrg').textContent = orgName || 'N/A';
+      document.getElementById('membershipLevel').textContent = membershipDisplay;
+      document.getElementById('applicationDate').textContent = formattedDate;
+    });
+  </script>
+  <script src="scripts/navigation.js" defer></script>
+</body>
+</html>
