@@ -1,0 +1,60 @@
+{
+  "attractions": [
+    {
+      "id": 1,
+      "name": "National Arts Theatre",
+      "address": "Tafawa Balewa Square, Lagos Island, Lagos State",
+      "description": "A magnificent architectural landmark and cultural hub showcasing Nigeria's rich artistic heritage. The theatre hosts major performances, exhibitions, and cultural events.",
+      "image": "images/discover/national-arts-theatre.webp"
+    },
+    {
+      "id": 2,
+      "name": "Lagos Central Mosque",
+      "address": "Lagos Island, Lagos State",
+      "description": "An iconic religious and architectural monument that stands as a symbol of Lagos' diverse religious heritage and beautiful Islamic architecture.",
+      "image": "images/discover/lagos-central-mosque.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Lekki Conservation Centre",
+      "address": "Lekki Peninsula, Eti-Osa, Lagos State",
+      "description": "A nature reserve featuring Nigeria's longest canopy walkway, diverse wildlife, and pristine wetlands perfect for eco-tourism and environmental education.",
+      "image": "images/discover/lekki-conservation.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Victoria Island Business District",
+      "address": "Victoria Island, Lagos State",
+      "description": "The premier business and financial district of Nigeria, home to multinational corporations, luxury hotels, and modern commercial developments.",
+      "image": "images/discover/victoria-island.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Nike Art Gallery",
+      "address": "Nike Davies-Okundaye Street, Lekki Phase 1, Lagos State",
+      "description": "Nigeria's largest art gallery showcasing contemporary and traditional African art, textiles, and crafts across multiple floors of exhibitions.",
+      "image": "images/discover/nike-art-gallery.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Tarkwa Bay Beach",
+      "address": "Tarkwa Bay Island, Lagos State",
+      "description": "A pristine island beach accessible only by boat, offering crystal clear waters, white sand, and a peaceful escape from the bustling city.",
+      "image": "images/discover/tarkwa-bay.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Freedom Park Lagos",
+      "address": "Broad Street, Lagos Island, Lagos State",
+      "description": "A historic cultural center and recreational park built on the site of the old colonial prison, now hosting concerts, festivals, and community events.",
+      "image": "images/discover/freedom-park.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Eko Atlantic City",
+      "address": "Victoria Island, Lagos State",
+      "description": "A modern planned city built on reclaimed land, featuring futuristic architecture, business centers, and representing the future of urban development in Africa.",
+      "image": "images/discover/eko-atlantic.jpeg"
+    }
+  ]
+}
