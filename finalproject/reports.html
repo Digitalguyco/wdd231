@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View detailed financial reports and charts with FinanceFlow. Analyze your spending patterns, income trends, and financial progress.">
+    <meta name="author" content="Daniel Ikekwem">
+    <title>Reports - FinanceFlow</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Reports - FinanceFlow">
+    <meta property="og:description" content="Analyze your financial data with detailed reports and visual charts.">
+    <meta property="og:image" content="images/financeflow-reports.jpg">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1>FinanceFlow</h1>
+                </div>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tracker.html" class="nav-link">Tracker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reports.html" class="nav-link active">Reports</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="reports-main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Financial Reports</h1>
+                <p>Analyze your financial data with visual charts and detailed summaries.</p>
+                
+                <!-- Date Range Filter -->
+                <div class="date-filter">
+                    <label for="date-range">Time Period:</label>
+                    <select id="date-range">
+                        <option value="7">Last 7 days</option>
+                        <option value="30" selected>Last 30 days</option>
+                        <option value="90">Last 3 months</option>
+                        <option value="365">Last year</option>
+                        <option value="all">All time</option>
+                    </select>
+                    <button class="btn btn-outline" id="refresh-reports">Refresh</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Statistics -->
+        <section class="report-summary">
+            <div class="container">
+                <div class="summary-grid">
+                    <div class="summary-stat income">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-content">
+                            <h3>Total Income</h3>
+                            <p class="stat-amount" id="report-total-income">$0.00</p>
+                            <span class="stat-change" id="income-change">+0%</span>
+                        </div>
+                    </div>
+                    <div class="summary-stat expense">
+                        <div class="stat-icon">💸</div>
+                        <div class="stat-content">
+                            <h3>Total Expenses</h3>
+                            <p class="stat-amount" id="report-total-expenses">$0.00</p>
+                            <span class="stat-change" id="expense-change">+0%</span>
+                        </div>
+                    </div>
+                    <div class="summary-stat balance">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-content">
+                            <h3>Net Balance</h3>
+                            <p class="stat-amount" id="report-net-balance">$0.00</p>
+                            <span class="stat-change" id="balance-change">+0%</span>
+                        </div>
+                    </div>
+                    <div class="summary-stat transactions">
+                        <div class="stat-icon">📝</div>
+                        <div class="stat-content">
+                            <h3>Transactions</h3>
+                            <p class="stat-amount" id="report-transaction-count">0</p>
+                            <span class="stat-change" id="transaction-change">+0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Section -->
+        <section class="charts-section">
+            <div class="container">
+                <div class="charts-grid">
+                    <!-- Spending by Category Chart -->
+                    <div class="chart-container">
+                        <h3>Spending by Category</h3>
+                        <div class="chart-wrapper">
+                            <canvas id="category-chart" class="chart"></canvas>
+                            <div class="chart-legend" id="category-legend"></div>
+                        </div>
+                        <div class="chart-empty" id="category-empty" style="display: none;">
+                            <p>No expense data available for the selected period.</p>
+                        </div>
+                    </div>
+
+                    <!-- Income vs Expenses Over Time -->
+                    <div class="chart-container">
+                        <h3>Income vs Expenses Trend</h3>
+                        <div class="chart-wrapper">
+                            <canvas id="trend-chart" class="chart"></canvas>
+                        </div>
+                        <div class="chart-empty" id="trend-empty" style="display: none;">
+                            <p>No transaction data available for the selected period.</p>
+                        </div>
+                    </div>
+
+                    <!-- Monthly Overview -->
+                    <div class="chart-container">
+                        <h3>Monthly Overview</h3>
+                        <div class="chart-wrapper">
+                            <canvas id="monthly-chart" class="chart"></canvas>
+                        </div>
+                        <div class="chart-empty" id="monthly-empty" style="display: none;">
+                            <p>No monthly data available.</p>
+                        </div>
+                    </div>
+
+                    <!-- Top Spending Categories -->
+                    <div class="chart-container">
+                        <h3>Top Spending Categories</h3>
+                        <div class="top-categories" id="top-categories">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                        <div class="chart-empty" id="top-categories-empty" style="display: none;">
+                            <p>No spending data available.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Analysis -->
+        <section class="detailed-analysis">
+            <div class="container">
+                <h2>Detailed Analysis</h2>
+                <div class="analysis-grid">
+                    <!-- Spending Patterns -->
+                    <div class="analysis-card">
+                        <h3>Spending Patterns</h3>
+                        <div class="pattern-list" id="spending-patterns">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Financial Health Score -->
+                    <div class="analysis-card">
+                        <h3>Financial Health Score</h3>
+                        <div class="health-score">
+                            <div class="score-circle">
+                                <span class="score-number" id="health-score">--</span>
+                                <span class="score-label">/ 100</span>
+                            </div>
+                            <div class="score-description" id="health-description">
+                                Add more transactions to calculate your financial health score.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Savings Recommendations -->
+                    <div class="analysis-card">
+                        <h3>Savings Recommendations</h3>
+                        <div class="recommendations" id="savings-recommendations">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Recent Trends -->
+                    <div class="analysis-card">
+                        <h3>Recent Trends</h3>
+                        <div class="trends-list" id="recent-trends">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Export Options -->
+        <section class="export-section">
+            <div class="container">
+                <h2>Export & Backup</h2>
+                <div class="export-options">
+                    <button class="btn btn-primary" id="export-csv">Export as CSV</button>
+                    <button class="btn btn-secondary" id="export-json">Export as JSON</button>
+                    <button class="btn btn-outline" id="print-report">Print Report</button>
+                </div>
+                <p class="export-note">
+                    Export your financial data for backup or use in other applications. 
+                    Your data remains private and is processed locally on your device.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FinanceFlow</h3>
+                    <p>Empowering better financial decisions through intuitive tools and education.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tracker.html">Tracker</a></li>
+                        <li><a href="reports.html">Reports</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#" id="help-link">Help & Support</a></li>
+                        <li><a href="#" id="privacy-link">Privacy Policy</a></li>
+                        <li><a href="attributions.html">Attributions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FinanceFlow by Daniel Ikekwem | WDD 231 Final Project</p>
+                <p><a href="#" id="video-link">📹 Project Video Demonstration</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chart Detail Modal -->
+    <div id="chart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modal-chart-title">Chart Details</h3>
+            <div class="chart-detail-content" id="chart-detail-content">
+                <!-- Chart details will be populated by JavaScript -->
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-primary" id="close-chart-modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="scripts/reports.js"></script>
+</body>
+</html>

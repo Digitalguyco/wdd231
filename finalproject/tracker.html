@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Track your income and expenses with FinanceFlow's intuitive transaction tracker. Add, edit, and manage your financial data.">
+    <meta name="author" content="Daniel Ikekwem">
+    <title>Tracker - FinanceFlow</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tracker - FinanceFlow">
+    <meta property="og:description" content="Track your income and expenses with our intuitive transaction tracker.">
+    <meta property="og:image" content="images/financeflow-tracker.jpg">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1>FinanceFlow</h1>
+                </div>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tracker.html" class="nav-link active">Tracker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reports.html" class="nav-link">Reports</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="tracker-main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Financial Tracker</h1>
+                <p>Add and manage your income and expenses to stay on top of your finances.</p>
+            </div>
+        </section>
+
+        <!-- Transaction Form -->
+        <section class="transaction-form-section">
+            <div class="container">
+                <div class="form-container">
+                    <h2>Add New Transaction</h2>
+                    <form id="transaction-form" class="transaction-form">
+                        <div class="form-group">
+                            <label for="transaction-type">Transaction Type</label>
+                            <select id="transaction-type" name="type" required>
+                                <option value="">Select Type</option>
+                                <option value="income">Income</option>
+                                <option value="expense">Expense</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="transaction-amount">Amount ($)</label>
+                            <input type="number" id="transaction-amount" name="amount" 
+                                   step="0.01" min="0" placeholder="0.00" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="transaction-category">Category</label>
+                            <select id="transaction-category" name="category" required>
+                                <option value="">Select Category</option>
+                                <!-- Categories will be populated by JavaScript -->
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="transaction-description">Description</label>
+                            <input type="text" id="transaction-description" name="description" 
+                                   placeholder="Brief description of the transaction" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="transaction-date">Date</label>
+                            <input type="date" id="transaction-date" name="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="transaction-notes">Notes (Optional)</label>
+                            <textarea id="transaction-notes" name="notes" 
+                                      placeholder="Additional notes or details"></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Add Transaction</button>
+                            <button type="button" class="btn btn-secondary" id="clear-form">Clear Form</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Summary -->
+        <section class="quick-summary">
+            <div class="container">
+                <h2>Quick Summary</h2>
+                <div class="summary-cards">
+                    <div class="summary-card income">
+                        <div class="card-icon">💰</div>
+                        <div class="card-content">
+                            <h3>Total Income</h3>
+                            <p class="amount" id="summary-income">$0.00</p>
+                        </div>
+                    </div>
+                    <div class="summary-card expense">
+                        <div class="card-icon">💸</div>
+                        <div class="card-content">
+                            <h3>Total Expenses</h3>
+                            <p class="amount" id="summary-expenses">$0.00</p>
+                        </div>
+                    </div>
+                    <div class="summary-card balance">
+                        <div class="card-icon">📊</div>
+                        <div class="card-content">
+                            <h3>Net Balance</h3>
+                            <p class="amount" id="summary-balance">$0.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Transactions -->
+        <section class="recent-transactions">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Recent Transactions</h2>
+                    <div class="filter-controls">
+                        <select id="filter-type">
+                            <option value="all">All Types</option>
+                            <option value="income">Income Only</option>
+                            <option value="expense">Expenses Only</option>
+                        </select>
+                        <select id="filter-category">
+                            <option value="all">All Categories</option>
+                        </select>
+                        <button class="btn btn-outline" id="clear-filters">Clear Filters</button>
+                    </div>
+                </div>
+
+                <div class="transactions-container">
+                    <div class="transactions-list" id="transactions-list">
+                        <!-- Transactions will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="empty-state" id="empty-state" style="display: none;">
+                        <div class="empty-icon">📝</div>
+                        <h3>No transactions yet</h3>
+                        <p>Start by adding your first income or expense transaction above.</p>
+                        <button class="btn btn-primary" onclick="document.getElementById('transaction-amount').focus()">
+                            Add First Transaction
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pagination-controls" id="pagination-controls" style="display: none;">
+                    <button class="btn btn-outline" id="load-more">Load More</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FinanceFlow</h3>
+                    <p>Empowering better financial decisions through intuitive tools and education.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tracker.html">Tracker</a></li>
+                        <li><a href="reports.html">Reports</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#" id="help-link">Help & Support</a></li>
+                        <li><a href="#" id="privacy-link">Privacy Policy</a></li>
+                        <li><a href="attributions.html">Attributions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FinanceFlow by Daniel Ikekwem | WDD 231 Final Project</p>
+                <p><a href="#" id="video-link">📹 Project Video Demonstration</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Transaction Detail Modal -->
+    <div id="transaction-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modal-transaction-title">Transaction Details</h3>
+            <div class="transaction-details" id="transaction-details">
+                <!-- Transaction details will be populated by JavaScript -->
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-primary" id="edit-transaction-btn">Edit</button>
+                <button class="btn btn-danger" id="delete-transaction-btn">Delete</button>
+                <button class="btn btn-secondary" id="close-modal-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div id="message-container" class="message-container"></div>
+
+    <!-- Scripts -->
+    <script type="module" src="scripts/tracker.js"></script>
+</body>
+</html>

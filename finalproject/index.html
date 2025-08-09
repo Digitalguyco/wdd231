@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FinanceFlow - Take control of your personal finances with our intuitive tracking tools, visual reports, and financial literacy resources.">
+    <meta name="author" content="Daniel Ikekwem">
+    <title>FinanceFlow - Personal Finance Tracker</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FinanceFlow - Personal Finance Tracker">
+    <meta property="og:description" content="Take control of your personal finances with our intuitive tracking tools and visual reports.">
+    <meta property="og:image" content="images/financeflow-hero.jpg">
+    <meta property="og:url" content="https://your-github-username.github.io/wdd231/finalproject/">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1>FinanceFlow</h1>
+                </div>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tracker.html" class="nav-link">Tracker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reports.html" class="nav-link">Reports</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Take Control of Your Financial Future</h1>
+                    <p class="hero-subtitle">Track expenses, monitor income, and build better money habits with FinanceFlow's intuitive personal finance tools.</p>
+                    <div class="hero-buttons">
+                        <a href="tracker.html" class="btn btn-primary">Start Tracking</a>
+                        <a href="reports.html" class="btn btn-secondary">View Reports</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-graphic">
+                        <div class="chart-placeholder">
+                            <div class="chart-bar" style="height: 60%"></div>
+                            <div class="chart-bar" style="height: 80%"></div>
+                            <div class="chart-bar" style="height: 45%"></div>
+                            <div class="chart-bar" style="height: 90%"></div>
+                            <div class="chart-bar" style="height: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose FinanceFlow?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Track Income & Expenses</h3>
+                        <p>Easily log your financial transactions with our intuitive interface. Categorize expenses and monitor your spending patterns.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <h3>Visual Reports</h3>
+                        <p>Get insights with beautiful charts and graphs that show your spending habits, savings progress, and financial trends.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Set Financial Goals</h3>
+                        <p>Create and track progress toward your financial objectives, whether it's saving for a vacation or paying off debt.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Private & Secure</h3>
+                        <p>Your data stays on your device. No accounts required, no data sharing - complete privacy and security.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Mobile Responsive</h3>
+                        <p>Access your finances anywhere, anytime. Our responsive design works perfectly on all devices.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💡</div>
+                        <h3>Financial Education</h3>
+                        <p>Learn with built-in tips and resources to improve your financial literacy and money management skills.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Financial Tips Section -->
+        <section class="tips-section">
+            <div class="container">
+                <h2 class="section-title">Financial Literacy Tips</h2>
+                <div class="tips-container" id="tips-container">
+                    <!-- Tips will be loaded dynamically -->
+                </div>
+                <button class="btn btn-outline" id="load-more-tips">Load More Tips</button>
+            </div>
+        </section>
+
+        <!-- Quick Stats Section -->
+        <section class="quick-stats">
+            <div class="container">
+                <h2 class="section-title">Your Financial Overview</h2>
+                <div class="stats-grid" id="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="total-transactions">0</div>
+                        <div class="stat-label">Total Transactions</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="total-income">$0</div>
+                        <div class="stat-label">Total Income</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="total-expenses">$0</div>
+                        <div class="stat-label">Total Expenses</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="net-balance">$0</div>
+                        <div class="stat-label">Net Balance</div>
+                    </div>
+                </div>
+                <div class="stats-actions">
+                    <a href="tracker.html" class="btn btn-primary">Add Transaction</a>
+                    <a href="reports.html" class="btn btn-secondary">View Detailed Reports</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FinanceFlow</h3>
+                    <p>Empowering better financial decisions through intuitive tools and education.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tracker.html">Tracker</a></li>
+                        <li><a href="reports.html">Reports</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#" id="help-link">Help & Support</a></li>
+                        <li><a href="#" id="privacy-link">Privacy Policy</a></li>
+                        <li><a href="attributions.html">Attributions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FinanceFlow by Daniel Ikekwem | WDD 231 Final Project</p>
+                <p><a href="#" id="video-link">📹 Project Video Demonstration</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Tips Details -->
+    <div id="tip-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modal-tip-title"></h3>
+            <p id="modal-tip-content"></p>
+            <div class="modal-actions">
+                <button class="btn btn-primary" id="modal-close-btn">Got it!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="scripts/main.js"></script>
+</body>
+</html>
